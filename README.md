@@ -2,7 +2,11 @@
 
 -- Made by Blake Almon --
 
-TO START THE CODE RUN THE CONDUCTOR.JAVA FILE
+1. Plug in open ai api key
+
+2. Run conductor.java
+
+3. Input the ammount of questions you want
 
 Purpose [Social Good Project Code.org]: 
 
@@ -10,6 +14,4 @@ Purpose [Social Good Project Code.org]:
 
 -Possible Extensions: I would like to be quizzed on descriptors based on the bird.
 
-- ✅ TO DO: Use your knowledge of object-oriented programming, one-dimensional (1D) arrays, and algorithms to create your data analysis program
-
-- OPENAI API key ~$4-5 left, feel free to use it as much as needed
+- ✅ TO DO: Use your knowledge of object-oriented programming, one-dimensional (1D) arrays, and algorithms to create your data analysis program:

@@ -1,13 +1,15 @@
-import java.io.File;
+// imports
 import java.io.IOException;
 import java.util.Scanner;
-
 import src.*;
 
 
 public class Conductor {
     
     public static void main(String[] args) throws IOException, InterruptedException {
+
+        
+        String apiKey = "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";
 
         System.out.println("Welcome to the avian social good project\nThis project has questions created by chatgpt, you can run it over and over to get more questions");
         System.out.println("Please type the ammount of questions you want (no greater than 30)");
@@ -18,11 +20,13 @@ public class Conductor {
 
         System.out.println("Thank you for the input, the questions will take some time to generate");
 
+        myScanner.close();
+
         // data runner
         DataRunner dataRunner = new DataRunner();
-
         // file accessor
         FileAccessor fileAccessor = new FileAccessor();
+        
 
         // relative path
         String path = "./txtfiles/";
@@ -55,13 +59,14 @@ public class Conductor {
                 dataRunner.setStatus(fileAccessor.accessFile());
             }
         }
-        
 
         // user story -> question creator
         UserStory userStory = new UserStory(dataRunner.getColors(), dataRunner.getDiets(), dataRunner.getNames(), dataRunner.getStatus());
 
+        // questions done
+
         // String with all questions from chatGPT
-        String rawQuestions = userStory.questions(input);
+        String rawQuestions = userStory.questions(input, apiKey);
 
         //getting valuable information out of questions var without using json (I have to download it)
         

@@ -9,7 +9,6 @@ import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Scanner;
 
 // json imports
 
@@ -38,7 +37,7 @@ public class UserStory {
 
 
     // creating questions
-    public String questions(int input) throws IOException, InterruptedException{
+    public String questions(int input, String apiKey) throws IOException, InterruptedException{
 
         //turning arrays in strings
         String namesList = "Names :";
@@ -82,7 +81,7 @@ public class UserStory {
 		httpConn.setRequestMethod("POST");
 
 		httpConn.setRequestProperty("Content-Type", "application/json");
-		httpConn.setRequestProperty("Authorization", "Bearer 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");
+		httpConn.setRequestProperty("Authorization", "Bearer " + apiKey);
 
 		httpConn.setDoOutput(true);
 		OutputStreamWriter writer = new OutputStreamWriter(httpConn.getOutputStream());
@@ -101,7 +100,7 @@ public class UserStory {
 		Scanner s = new Scanner(responseStream).useDelimiter("\\A");
 		String response = s.hasNext() ? s.next() : "";
 
-
+        System.out.println(response);
 
         s.close();
 

@@ -1,7 +1,5 @@
 package src;
 
-// imports
-import java.util.Scanner;
 
 public class DataRunner {
 
