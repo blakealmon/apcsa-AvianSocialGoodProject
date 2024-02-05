@@ -1,15 +1,25 @@
 package src;
 
+import java.io.BufferedReader;
+// imports
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class FileAccessor {
 
     // filename
     private String fileName;
+
+    // object without parameters
+    public FileAccessor(){
+
+    }
     
-    // object
+    // object with parameters
     public FileAccessor(String fileName){
         this.fileName = fileName;
     }
@@ -20,24 +30,28 @@ public class FileAccessor {
     }
 
     // accessing file
-    public String[] accessFile() throws FileNotFoundException{
+    public String[] accessFile() throws IOException{
 
         // array that will be returned
         String[] returnedArray = new String[98];
 
+   
+
+        // accessing file and adding each line to array
+        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        String currentLine = reader.readLine();
+
         // counter for array position
         int counter = 0;
 
-        // accessing file and adding each line to array
-        File myObj = new File("txtfiles/" + fileName);
-        
-        Scanner myReader = new Scanner(myObj);
-        while (myReader.hasNextLine()) {
-            String data = myReader.nextLine();
-            returnedArray[counter] = data;
+        while(currentLine != null){
+            returnedArray[counter] = currentLine;
+
             counter++;
+            currentLine =reader.readLine();
         }
-        myReader.close();
+
+        reader.close();
 
         // returning new array
         return returnedArray;
