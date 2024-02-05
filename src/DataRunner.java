@@ -54,4 +54,26 @@ public class DataRunner {
     public void setStatus(String[] status) {
         this.status = status;
     }
+
+
+    // to string with all data
+    public String toString() {
+        
+        String listOfData = "";
+        for(int a = 0; a < 98; a++){
+            listOfData = listOfData + ", " + names[a];
+        }
+        for(int a = 0; a < 98; a++){
+            listOfData = listOfData + ", " + diets[a];
+        }
+        for(int a = 0; a < 98; a++){
+            listOfData = listOfData + ", " + colors[a];
+        }
+        for(int a = 0; a < 98; a++){
+            listOfData = listOfData + ", " + status[a];
+        }
+       
+      
+        return listOfData;
+    }
 }

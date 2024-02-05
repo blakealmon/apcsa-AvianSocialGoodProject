@@ -38,7 +38,7 @@ public class UserStory {
 
 
     // creating questions
-    public String questions() throws IOException, InterruptedException{
+    public String questions(int input) throws IOException, InterruptedException{
 
         //turning arrays in strings
         String namesList = "Names :";
@@ -88,7 +88,7 @@ public class UserStory {
 		OutputStreamWriter writer = new OutputStreamWriter(httpConn.getOutputStream());
 
         // chat gpt prompt
-        String prompt = "By using this data create multiple choice questions that do not repeat answers or birds, for these birds (they correlate to their position in the list), give me 25 questions, while only using the data given. [DO NOT INCLUDE FORMATTING and INCLUDE ANSWER KEY AT BOTTOM] " + namesList + ". " + colorsList + ". " + dietsList + ". " + statusList;
+        String prompt = "By using this data create multiple choice questions that do not repeat answers or birds, for these birds (they correlate to their position in the list), give me" +  input +  "questions, while only using the data given. [DO NOT INCLUDE FORMATTING and INCLUDE ANSWER KEY AT BOTTOM] " + namesList + ". " + colorsList + ". " + dietsList + ". " + statusList;
 
 		writer.write("{\n    \"model\": \"gpt-3.5-turbo\",\n    \"messages\": [{\"role\": \"user\", \"content\": \""+prompt+"\"}]\n  }");
 		writer.flush();

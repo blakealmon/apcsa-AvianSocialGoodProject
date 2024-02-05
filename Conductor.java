@@ -1,6 +1,6 @@
 import java.io.File;
 import java.io.IOException;
-
+import java.util.Scanner;
 
 import src.*;
 
@@ -8,6 +8,15 @@ import src.*;
 public class Conductor {
     
     public static void main(String[] args) throws IOException, InterruptedException {
+
+        System.out.println("Welcome to the avian social good project\nThis project has questions created by chatgpt, you can run it over and over to get more questions");
+        System.out.println("Please type the ammount of questions you want (no greater than 30)");
+
+        Scanner myScanner = new Scanner(System.in);
+
+        int input = myScanner.nextInt();
+
+        System.out.println("Thank you for the input, the questions will take some time to generate");
 
         // data runner
         DataRunner dataRunner = new DataRunner();
@@ -52,7 +61,7 @@ public class Conductor {
         UserStory userStory = new UserStory(dataRunner.getColors(), dataRunner.getDiets(), dataRunner.getNames(), dataRunner.getStatus());
 
         // String with all questions from chatGPT
-        String rawQuestions = userStory.questions();
+        String rawQuestions = userStory.questions(input);
 
         //getting valuable information out of questions var without using json (I have to download it)
         
@@ -73,9 +82,7 @@ public class Conductor {
         String onlyQuestions = removedTopPartQuestions.substring(0, x);
 
         // removing format from - https://stackoverflow.com/questions/2163045/how-to-remove-line-breaks-from-a-file-in-java
-        while (onlyQuestions.contains("\n"))
-            onlyQuestions = onlyQuestions.replaceAll("^\n+|[^\n]\n", "");
-
+      
         System.out.println(onlyQuestions);
 
         
