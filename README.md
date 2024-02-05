@@ -2,6 +2,8 @@
 
 -- Made by Blake Almon --
 
+TO START THE CODE RUN THE CONDUCTOR.JAVA FILE
+
 Purpose [Social Good Project Code.org]: 
 
 -User Story A: As an avian veterinary student, I want to identify groups of similar birds so I can study them for my final exams.
