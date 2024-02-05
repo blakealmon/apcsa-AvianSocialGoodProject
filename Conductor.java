@@ -8,8 +8,11 @@ public class Conductor {
     
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        
-        String apiKey = "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";
+        // ------ INPUT API KEY HERE --------
+        String apiKey = "YOUR API KEY";
+        // ------ NEEDED TO RUN CODE --------
+
+
 
         System.out.println("Welcome to the avian social good project\nThis project has questions created by chatgpt, you can run it over and over to get more questions");
         System.out.println("Please type the ammount of questions you want (no greater than 30)");
