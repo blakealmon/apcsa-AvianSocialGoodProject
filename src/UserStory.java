@@ -100,7 +100,7 @@ public class UserStory {
 		Scanner s = new Scanner(responseStream).useDelimiter("\\A");
 		String response = s.hasNext() ? s.next() : "";
 
-        System.out.println(response);
+        
 
         s.close();
 
